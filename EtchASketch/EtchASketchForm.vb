@@ -150,7 +150,7 @@ Public Class EtchASketchForm
 
         For Cycles As Double = 0 To 100
 
-            y = Math.Sin(Cycles / 400 * 2 * Math.PI) * 20 + 150
+            y = Math.Sin(Cycles / 400 * 2 * Math.PI) * 100 + 150
             x = Cycles
 
             If lastX = Nothing Then
