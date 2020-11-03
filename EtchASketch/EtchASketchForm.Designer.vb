@@ -22,8 +22,7 @@ Partial Class EtchASketchForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.drawbox = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.DrawBox = New System.Windows.Forms.PictureBox()
         Me.SelectColorButton = New System.Windows.Forms.Button()
         Me.DrawWaveformsButton = New System.Windows.Forms.Button()
         Me.ClearButton = New System.Windows.Forms.Button()
@@ -37,30 +36,24 @@ Partial Class EtchASketchForm
         Me.ClearToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.drawbox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ColorChoose = New System.Windows.Forms.ColorDialog()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.DrawBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'drawbox
+        'DrawBox
         '
-        Me.drawbox.Location = New System.Drawing.Point(12, 85)
-        Me.drawbox.Name = "drawbox"
-        Me.drawbox.Size = New System.Drawing.Size(983, 701)
-        Me.drawbox.TabIndex = 0
-        Me.drawbox.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 122)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(983, 664)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.DrawBox.Location = New System.Drawing.Point(58, 83)
+        Me.DrawBox.Name = "DrawBox"
+        Me.DrawBox.Size = New System.Drawing.Size(1015, 701)
+        Me.DrawBox.TabIndex = 0
+        Me.DrawBox.TabStop = False
         '
         'SelectColorButton
         '
-        Me.SelectColorButton.Location = New System.Drawing.Point(48, 851)
+        Me.SelectColorButton.Location = New System.Drawing.Point(58, 809)
         Me.SelectColorButton.Name = "SelectColorButton"
         Me.SelectColorButton.Size = New System.Drawing.Size(182, 71)
         Me.SelectColorButton.TabIndex = 2
@@ -69,7 +62,7 @@ Partial Class EtchASketchForm
         '
         'DrawWaveformsButton
         '
-        Me.DrawWaveformsButton.Location = New System.Drawing.Point(236, 851)
+        Me.DrawWaveformsButton.Location = New System.Drawing.Point(246, 809)
         Me.DrawWaveformsButton.Name = "DrawWaveformsButton"
         Me.DrawWaveformsButton.Size = New System.Drawing.Size(182, 71)
         Me.DrawWaveformsButton.TabIndex = 3
@@ -78,7 +71,7 @@ Partial Class EtchASketchForm
         '
         'ClearButton
         '
-        Me.ClearButton.Location = New System.Drawing.Point(424, 851)
+        Me.ClearButton.Location = New System.Drawing.Point(434, 809)
         Me.ClearButton.Name = "ClearButton"
         Me.ClearButton.Size = New System.Drawing.Size(182, 71)
         Me.ClearButton.TabIndex = 4
@@ -87,7 +80,7 @@ Partial Class EtchASketchForm
         '
         'ExitButton
         '
-        Me.ExitButton.Location = New System.Drawing.Point(623, 851)
+        Me.ExitButton.Location = New System.Drawing.Point(633, 809)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(182, 71)
         Me.ExitButton.TabIndex = 5
@@ -101,7 +94,7 @@ Partial Class EtchASketchForm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1018, 48)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1113, 40)
         Me.MenuStrip1.TabIndex = 6
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -115,7 +108,7 @@ Partial Class EtchASketchForm
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(359, 44)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(186, 44)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'EditToolStripMenuItem
@@ -156,32 +149,39 @@ Partial Class EtchASketchForm
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(214, 44)
         Me.AboutToolStripMenuItem.Text = "About"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(58, 83)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1015, 701)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
         'EtchASketchForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1018, 943)
+        Me.ClientSize = New System.Drawing.Size(1113, 910)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.ClearButton)
         Me.Controls.Add(Me.DrawWaveformsButton)
         Me.Controls.Add(Me.SelectColorButton)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.drawbox)
+        Me.Controls.Add(Me.DrawBox)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.PictureBox1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "EtchASketchForm"
         Me.Text = "Etch-A-Sketch"
-        CType(Me.drawbox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DrawBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents drawbox As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents DrawBox As PictureBox
     Friend WithEvents SelectColorButton As Button
     Friend WithEvents DrawWaveformsButton As Button
     Friend WithEvents ClearButton As Button
@@ -195,4 +195,6 @@ Partial Class EtchASketchForm
     Friend WithEvents ClearToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ColorChoose As ColorDialog
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
